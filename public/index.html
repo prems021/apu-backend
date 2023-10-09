@@ -1,0 +1,266 @@
+<html>
+
+<head>
+  <title>Apu </title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+
+  <h2>Api list   (Apu) -- base Url -- https://5dgwf9-8080.csb.app </h2>
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th> Si</th>
+            <th> api  </th>
+            <th> Info  </th>
+            <th> Type </th>
+            <th> Params </th>
+            <th> body </th>
+            <th> Response </th>
+            <th> Comments </th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- <tr>
+            <td> 1 </td>
+            <td> /api/register </td>
+            <td> User Registration </td>
+            <td style="font-weight:bold;"> POST </td>
+            <td>  </td>
+            <td> { name, email, password }  </td>
+            <td> .. </td>
+            <td> .. </td>
+        </tr> -->
+        <tr>
+            <td> 1</td>
+            <td> /api/user_login </td>
+            <td> User login </td>
+            <td style="font-weight:bold;"> POST </td>
+            <td> </td>
+            <td> phone, password </td>
+            <td class="ress">  </td>
+            <td>.. </td>
+        </tr>
+       
+        <tr>
+            <td> 2 </td>
+            <td> /api/pvt/add_a_new_agency  </td>
+            <td> add a new agency </td>
+            <td style="font-weight:bold;"> POST </td>
+            <td>   </td>
+
+            <td> { name , state, district, pin_code,gst_no, UserId } 
+            </td>
+
+        </tr>
+
+        <tr>
+            <td> 3 </td>
+            <td> /api/register_with_ph_and_otp  </td>
+            <td> register a new user with ph no </td>
+            <td style="font-weight:bold;"> POST </td>
+            <td>   </td>
+            <td> { name , phone } 
+            </td>
+        </tr>
+
+        <tr>
+            <td> 4 </td>
+            <td> /api/validate_otp_for_user_registration  </td>
+            <td> Validfate otp </td>
+            <td style="font-weight:bold;"> POST </td>
+            <td>   </td>
+            <td> { otp , phone } 
+            </td>
+        </tr>
+
+        <tr>
+            <td> 5 </td>
+            <td> api/reset_user  </td>
+            <td> delete all data from user </td>
+            <td style="font-weight:bold;"> GET </td>
+            <td>   </td>
+            <td> 
+            </td>
+        </tr>
+
+            <tr>
+            <td> 6 </td>
+            <td> api/regenerate_otp  </td>
+            <td> regenerate otp </td>
+            <td style="font-weight:bold;"> POST </td>
+            <td>   </td>
+            <td>  { phone } 
+            </td>
+           </tr>
+
+           <tr>
+            <td> 7 </td>
+            <td> api/set_user_password_after_otp_verification  </td>
+            <td>  password set </td>
+            <td style="font-weight:bold;"> POST </td>
+            <td>   </td>
+            <td>  { phone , password } 
+            </td>
+        </tr>
+
+        <tr>
+            <td> 8 </td>
+            <td> api/pvt/approve_agency/:id  </td>
+            <td> Approve agency </td>
+            <td style="font-weight:bold;"> GET </td>
+            <td> {id}  </td>
+            <td>   
+            </td>
+        </tr>
+
+        
+        <tr>
+            <td> 8 </td>
+            <td> api/pvt/admin_login  </td>
+            <td> Admin Login </td>
+            <td style="font-weight:bold;"> POST </td>
+            <td>    </td>
+            <td>  { phone, password } 8129511573 pass : 123
+            </td>
+        </tr>
+
+        <tr>
+            <td> 9 </td>
+            <td> api/pvt/get_all_service_list  </td>
+            <td> get all service list </td>
+            <td style="font-weight:bold;"> GET </td>
+            <td>    </td>
+            <td>  
+            </td>
+        </tr>
+
+         <tr>
+            <td> 10 </td>
+            <td> api/pvt/get_agency_list/:status  </td>
+            <td> get all Agency list </td>
+            <td style="font-weight:bold;"> GET </td>
+            <td> status  : {Un-approved , Approved, All }   </td>
+            <td>  
+            </td>
+        </tr>
+
+        <tr>
+            <td> 11 </td>
+            <td> api/pvt/update_profile/:id  </td>
+            <td> get all Agency list </td>
+            <td style="font-weight:bold;"> POST </td>
+            <td>   </td>
+            <td>  {email,name}            </td>
+        </tr>
+
+   <tr>
+            <td> 12 </td>
+            <td> api/pvt/get_all_location_list  </td>
+            <td> get all location list </td>
+            <td style="font-weight:bold;"> GET </td>
+            <td>   </td>
+            <td>           </td>
+        </tr>
+        
+   <tr>
+            <td> 13 </td>
+            <td> api/pvt/update_agency_location/:id  </td>
+            <td> update location of agency </td>
+            <td style="font-weight:bold;"> POST </td>
+            <td> {agency_id}  </td>
+            <td>     {location_code,location_name}      </td>
+        </tr>
+
+        <tr>
+            <td> 14 </td>
+            <td> api/pvt/get_location_list_of_agency/:id  </td>
+            <td> update location of agency </td>
+            <td style="font-weight:bold;"> GET </td>
+            <td> {agency_id}  </td>
+            <td>         </td>
+        </tr>
+
+        <tr>
+            <td> 15 </td>
+            <td> api/pvt/add_a_service_to_agency/:s_id/:s_name/:a_id  </td>
+            <td> add new service to  agency </td>
+            <td style="font-weight:bold;"> GET </td>
+            <td> {service_code, service_name, agency_id}  </td>
+            <td>         </td>
+        </tr>
+
+        
+        <tr>
+            <td> 16 </td>
+            <td> api/pvt/get_all_service_of_a_agency/:a_id  </td>
+            <td> get services added by a agency </td>
+            <td style="font-weight:bold;"> GET </td>
+            <td> {agency_id}  </td>
+            <td>         </td>
+        </tr>
+
+
+        <tr>
+            <td> 17 </td>
+            <td> api/pvt/add_a_sub_service_to_agency/:ss_code/:ss_name/:a_id  </td>
+            <td> add a sub service by a agency </td>
+            <td style="font-weight:bold;"> GET </td>
+            <td> {sub service_code} {{sub_service_name}} {agency_id}  </td>
+            <td>         </td>
+        </tr>
+
+
+        <tr>
+            <td> 18 </td>
+            <td> api/pvt/get_all_sub_service_of_agency/:a_id  </td>
+            <td> get all sub services added by a agency </td>
+            <td style="font-weight:bold;"> GET </td>
+            <td>  {agency_id}  </td>
+            <td>         </td>
+        </tr>
+
+        <tr>
+            <td> 19 </td>
+            <td> api/pvt/add_a_new_apu </td>
+            <td> add a new apu </td>
+            <td style="font-weight:bold;"> POST </td>
+            <td>  </td>
+            <td>     {a_id,apu_name,desc}      </td>
+        </tr>
+
+
+        <tr>
+            <td> 20 </td>
+            <td>  api/pvt/get_all_apu_list_of_agency/:a_id </td>
+            <td> list of all apu </td>
+            <td style="font-weight:bold;"> GET </td>
+            <td>  {a_id}   </td>
+            <td>       </td>
+        </tr>
+
+        <tr>
+            <td> 21 </td>
+            <td>  api/pvt/map_a_sub_service_to_apu/:a_id/:ss_id/:apu_id </td>
+            <td> map a sub service to apu </td>
+            <td style="font-weight:bold;"> GET </td>
+            <td>  {a_id} {ss_id} { apu_id }  </td>
+            <td>       </td>
+        </tr>
+        
+
+        
+       
+
+        
+
+  
+        <tbody>
+    </table>
+</div>
+
+</body>
+
+</html>

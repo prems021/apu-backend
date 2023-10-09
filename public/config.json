@@ -1,0 +1,98 @@
+{
+  "services": [
+    {
+      "id": "MS100",
+      "name": "Hotel",
+      "description": "Book a hotel room for your stay.",
+      "apiKey": "your_api_key_here",
+      "subServices": [
+        {
+          "id": "SS1001",
+          "name": "Room Booking",
+          "description": "Book a room for your stay."
+        },
+        {
+          "id": "SS1002",
+          "name": "Restaurant Reservations",
+          "description": "Make reservations at the hotel's restaurant."
+        }
+      ]
+    },
+    {
+      "id": "MS200",
+      "name": "Salon",
+      "description": "Schedule an appointment at a salon.",
+      "apiKey": "your_api_key_here",
+      "subServices": [
+        {
+          "id": "SS2001",
+          "name": "Haircut",
+          "description": "Schedule a haircut appointment."
+        },
+        {
+          "id": "SS2002",
+          "name": "Manicure/Pedicure",
+          "description": "Book a manicure or pedicure session."
+        }
+      ]
+    },
+    {
+      "id": "MS300",
+      "name": "Cafe",
+      "description": "Book a Cafe room.",
+      "apiKey": "your_api_key_here",
+      "subServices": [
+        {
+          "id": "SS3001",
+          "name": "Cafe Booking",
+          "description": "Book a room for your stay."
+        },
+        {
+          "id": "SS3002",
+          "name": "Restaurant Reservations",
+          "description": "Make reservations at the hotel's restaurant."
+        }
+      ]
+    },
+    {
+      "id": "MS400",
+      "name": "Cafe",
+      "description": "Book a Cafe room.",
+      "apiKey": "your_api_key_here",
+      "subServices": [
+        {
+          "id": "SS3001",
+          "name": "Cafe Booking",
+          "description": "Book a room for your stay."
+        },
+        {
+          "id": "SS3002",
+          "name": "Restaurant Reservations",
+          "description": "Make reservations at the hotel's restaurant."
+        }
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "code": "KLM",
+      "name": "Kalamasseri"
+    },
+    {
+      "id": 2,
+      "code": "KAK",
+      "name": "Kakkanad"
+    },
+    {
+      "id": 3,
+      "code": "TRI",
+      "name": "Thrippunitura"
+    },
+    {
+      "id": 4,
+      "code": "ALV",
+      "name": "Aluva"
+    }
+  ]
+}
