@@ -16,18 +16,28 @@ router.get(
   "/map_a_sub_service_to_apu/:a_id/:ss_id/:apu_id",
   async function (req, res, next) {
     try {
-      const { a_id , ss_id , apu_id } = req.params;
+      const { a_id, ss_id, apu_id } = req.params;
 
-      if (!a_id  || !ss_id  || !apu_id ) {
+      if (!a_id || !ss_id || !apu_id) {
         res.status(400).json({ success: false, msg: "Invalid parameters" });
         return; // Exit early
       }
 
-      const list = await db.apu_list.findOne({
-        where: { AgencyId: a_id },
+      const list = await db.apu_mapping.findOne({
+        where: {
+          AgencyId: a_id,
+          SubServiceMappingId: ss_id,
+          ApuListId: apu_id,
+        },
       });
       if (!list) {
-        res.status(200).json({ success: true, data: null });
+        const Data = {
+          AgencyId: a_id,
+          SubServiceMappingId: ss_id,
+          ApuListId: apu_id,
+        };
+        const newd = await db.apu_mapping.create(Data);
+        res.status(200).json({ success: true, data: newd });
       } else {
         res.status(200).json({ success: true, data: list });
       }
@@ -37,10 +47,6 @@ router.get(
     }
   },
 );
-
-
-
-
 
 router.get(
   "/get_all_apu_list_of_agency/:a_id",

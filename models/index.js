@@ -33,6 +33,7 @@ db.otp = require("./otp.js")(sequelize, Sequelize);
 
 db.location_mapping = require("./location_mapping.js")(sequelize, Sequelize);
 db.service_mapping = require("./service_mapping.js")(sequelize, Sequelize);
+db.apu_mapping = require("./apu_mapping.js")(sequelize, Sequelize);
 db.sub_service_mapping = require("./sub_service_mapping.js")(
   sequelize,
   Sequelize,
@@ -59,5 +60,14 @@ db.sub_service_mapping.belongsTo(db.agency);
 
 db.agency.hasMany(db.apu_list);
 db.apu_list.belongsTo(db.agency);
+
+db.agency.hasMany(db.apu_mapping);
+db.apu_mapping.belongsTo(db.agency);
+
+db.sub_service_mapping.hasMany(db.apu_mapping);
+db.apu_mapping.belongsTo(db.sub_service_mapping);
+
+db.apu_list.hasMany(db.apu_mapping);
+db.apu_mapping.belongsTo(db.apu_list);
 
 module.exports = db;
