@@ -713,9 +713,9 @@ extend@~3.0.2:
   resolved "https://registry.yarnpkg.com/extend/-/extend-3.0.2.tgz#f8b1136b4071fbd8eb140aff858b1019ec2915fa"
   integrity sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==
 
-external-ip@^2.3.1:
+external-ip@2.3.1:
   version "2.3.1"
-  resolved "https://registry.npmjs.org/external-ip/-/external-ip-2.3.1.tgz"
+  resolved "https://registry.yarnpkg.com/external-ip/-/external-ip-2.3.1.tgz#8f94d47ed7c912541cee45ef0a22e07ab186b40c"
   integrity sha512-d+vV/zpN5tXpmOQKnkkfZ1cLC8wid1UqG+aQmUgrV2z9YOQjN4q7IEpIYPTMBkrbZMhP3v+KAmH36qC4jtRLHQ==
   dependencies:
     ajv "^6.12.2"

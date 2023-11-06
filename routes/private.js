@@ -48,6 +48,17 @@ router.get(
   },
 );
 
+router.post("/user_login");
+
+router.post("/user_login", async function (req, res, next) {
+  try {
+    console.log(req.body);
+  } catch (error) {
+    console.error("Error:", error);
+    res.status(500).json({ msg: "An error occurred ", error: error });
+  }
+});
+
 router.get(
   "/get_all_apu_list_of_agency/:a_id",
   async function (req, res, next) {
