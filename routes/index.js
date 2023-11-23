@@ -8,10 +8,50 @@ const Op = db.Sequelize.Op;
 const Otp = db.otp;
 const otpGenerator = require("otp-generator");
 var unirest = require("unirest");
+const axios = require("axios");
+const cron = require("node-cron");
+
+const postData = {
+  target: "8129511573",
+  msg: "some message from wa",
+  date: Date.now(),
+};
 
 /* GET home page. */
-router.get("/", function (req, res, next) {
-  res.json({ index: "Express" });
+router.post("/wake_up", function (req, res, next) {
+  res.json({ data: "Express waked" });
+});
+
+cron.schedule(
+  "*/8 * * * *",
+  () => {
+    console.log("Running a job every 2 minutes in America/Sao_Paulo timezone");
+    axios
+      .post("https://z3vryk-9000.csb.app/wa_api", postData)
+      .then((response) => {
+        console.log("Response:", response.data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  },
+  {
+    scheduled: true,
+    timezone: "America/Sao_Paulo",
+  },
+);
+
+router.get("/wa", function (req, res, next) {
+  axios
+    .post("https://z3vryk-9000.csb.app/wa_api", postData)
+    .then((response) => {
+      console.log("Response: body", response.data);
+      if (response.data.success === true) {
+        res.json({ success: true, msg: "Family added" });
+      } else {
+        res.json({ success: true, msg: "user added... Whatsapp msg failed" });
+      }
+    });
 });
 
 router.get("/reset_user", async function (req, res, next) {
